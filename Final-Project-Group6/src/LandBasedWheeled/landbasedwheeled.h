@@ -20,7 +20,7 @@ public:
         virtual void TurnLeft() override;
         virtual void TurnRight() override;
         void SpeedUp(int);
-        virtual ~LandBasedWheeled();
+        virtual ~LandBasedWheeled() {}
 
 };
 

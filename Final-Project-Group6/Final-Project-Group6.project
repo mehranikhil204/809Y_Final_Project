@@ -98,6 +98,14 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="API">
+      <File Name="src/API/api.cpp"/>
+      <File Name="src/API/api.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Maze">
+      <File Name="src/Maze/maze.cpp"/>
+      <File Name="src/Maze/maze.h"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="LandBasedTracked">
       <File Name="src/LandBasedTracked/landbasedtracked.cpp"/>
       <File Name="src/LandBasedTracked/landbasedtracked.h"/>

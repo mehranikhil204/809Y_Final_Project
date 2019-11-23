@@ -19,7 +19,7 @@ public:
         virtual void MoveForward() override;
         virtual void TurnLeft() override;
         virtual void TurnRight() override;	
-        virtual ~LandBasedTracked();
+        virtual ~LandBasedTracked() {}
 		
 };
 
