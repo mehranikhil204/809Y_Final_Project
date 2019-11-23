@@ -1,41 +1,49 @@
 [{
-  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedRobot/landbasedrobot.h",
-  "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
-  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedRobot/landbasedrobot.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedRobot/landbasedrobot.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
- }, {
   "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.h",
   "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
   "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
-  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.h",
+  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Algorithm/algorithm.h",
   "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
-  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Algorithm/algorithm.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Algorithm/algorithm.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Algorithm/algorithm.cpp",
+  "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
+  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Algorithm/algorithm.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Algorithm/algorithm.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedRobot/landbasedrobot.h",
+  "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
+  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedRobot/landbasedrobot.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedRobot/landbasedrobot.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
   "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.cpp",
   "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
   "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
-  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/main.cpp",
-  "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
-  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/main.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/main.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
- }, {
   "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.cpp",
   "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
   "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
-  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.cpp",
+  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.h",
   "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
-  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
- }, {
-  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.cpp",
-  "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
-  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
   "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.h",
   "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
   "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
-  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.h",
+  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/main.cpp",
   "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
-  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/API/api.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/main.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/main.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.cpp",
+  "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
+  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Maze/maze.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.cpp",
+  "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
+  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.cpp -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedWheeled/landbasedwheeled.cpp.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.h",
+  "directory": "/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6",
+  "command": "clang  -c /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.h -o /home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/LandBasedTracked/landbasedtracked.h.o  -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }]

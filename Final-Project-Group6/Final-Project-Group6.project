@@ -98,6 +98,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="Algorithm">
+      <File Name="src/Algorithm/algorithm.cpp"/>
+      <File Name="src/Algorithm/algorithm.h"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="API">
       <File Name="src/API/api.cpp"/>
       <File Name="src/API/api.h"/>
