@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 #include "landbasedwheeled.h"
 
 void fp::LandBasedWheeled::MoveForward()
