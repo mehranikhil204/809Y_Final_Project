@@ -1,6 +1,7 @@
 #pragma once
 #include <array>
 #include <iostream>
+#include "../API/api.h"
 
 namespace fp
 {
@@ -18,6 +19,7 @@ class Maze
         Maze();
         
         void DisplayMazeData(int, int);
+        void MazeUpdate(int, int, char);
         
         bool get_northwall(int, int) const;
         bool get_eastwall(int, int) const;
