@@ -1,44 +1,43 @@
 #include "maze.h"
 
-
-//initializing wall matrix
 fp::Maze::Maze()
 {
     for(int i = 0; i < 16; i++) {
         for(int j = 0; j < 16; j++) {
-            northwall_[i][j] = false;
-            eastwall_[i][j] = false;
-            westwall_[i][j] = false;
-            southwall_[i][j] = false;
-//            if(i = 0 && j =0){
-//                southwall_[i][j] = true;
-//                westwall_[i][j] = true;
-//            }
-//            if(i = 16 && j=0){
-//                southwall_[i][j] = true;
-//                eastwall_[i][j] = true;
-//            }
-//            if(i = 0 && j=16){
-//                northwall_[i][j] = true;
-//                westwall_[i][j] = true;
-//            }
-//            if(i = 16 && j=16){
-//                northwall_[i][j] = true;
-//                eastwall_[i][j] = true;
-//            }
-//            if((i != 0 || i != 16) && j=0){
-//                southwall_[i][j] = true;
-//            }
+            if(i == 0) {
+                westwall_[i][j] = true;
+                fp::API::setWall(i, j, 'w');
+            }
+            if(i == 15) {
+                eastwall_[i][j] = true;
+                fp::API::setWall(i, j, 'e');
+            }
+            if(j == 0){
+                 southwall_[i][j] = true;
+                 fp::API::setWall(i, j, 's');
+            }
+            if(j == 15){
+                 northwall_[i][j] = true;
+                 fp::API::setWall(i, j, 'n');
+            }   
+            
+            if(i != 0 && j != 0 && i != 15 && j != 15)
+            { 
+                northwall_[i][j] = false;
+                eastwall_[i][j] = false;
+                westwall_[i][j] = false;
+                southwall_[i][j] = false;
+            }
+        }
     }
 }
-}
+
 void fp::Maze::MazeUpdate(int x, int y, char d) {
     
     if(d == 'N') {
         if(fp::API::wallFront()) {
             fp::API::setWall(x, y, 'n');
             northwall_[x][y] = true;
-            //color maze wall
         }
         if(fp::API::wallLeft()) {
             fp::API::setWall(x, y, 'w');
