@@ -1,27 +1,29 @@
 #include "maze.h"
 
+// Maze class Constructor
 fp::Maze::Maze()
 {
-    for(int i = 0; i < 16; i++) {
-        for(int j = 0; j < 16; j++) {
+    // All walls except boundary walls are initialized as false 
+    for(int i = 0; i < 16; i++) { // Looping in x-axis
+        for(int j = 0; j < 16; j++) { // Looping in y-axis
             if(i == 0) {
                 westwall_[i][j] = true;
-                fp::API::setWall(i, j, 'w');
+                fp::API::setWall(i, j, 'w'); // Left Boundary
             }
             if(i == 15) {
                 eastwall_[i][j] = true;
-                fp::API::setWall(i, j, 'e');
+                fp::API::setWall(i, j, 'e'); // Rigth Boundary
             }
             if(j == 0){
                  southwall_[i][j] = true;
-                 fp::API::setWall(i, j, 's');
+                 fp::API::setWall(i, j, 's'); // Bottom Boundary
             }
             if(j == 15){
                  northwall_[i][j] = true;
-                 fp::API::setWall(i, j, 'n');
+                 fp::API::setWall(i, j, 'n'); // Top Boundary
             }   
             
-            if(i != 0 && j != 0 && i != 15 && j != 15)
+            if(i != 0 && j != 0 && i != 15 && j != 15) // All other walls
             { 
                 northwall_[i][j] = false;
                 eastwall_[i][j] = false;
@@ -33,7 +35,7 @@ fp::Maze::Maze()
 }
 
 void fp::Maze::MazeUpdate(int x, int y, char d) {
-    
+    // When robot is facing in the North direction
     if(d == 'N') {
         if(fp::API::wallFront()) {
             fp::API::setWall(x, y, 'n');
@@ -48,7 +50,7 @@ void fp::Maze::MazeUpdate(int x, int y, char d) {
             eastwall_[x][y] = true;
         }
     }
-    
+    // When robot is facing in the West direction
     if(d == 'W') {
         if(fp::API::wallFront()) {
             fp::API::setWall(x, y, 'w');
@@ -63,7 +65,7 @@ void fp::Maze::MazeUpdate(int x, int y, char d) {
             northwall_[x][y] = true;
         }
     }
-    
+    // When robot is facing in the East direction
     if(d == 'E') {
         if(fp::API::wallFront()) {
             fp::API::setWall(x, y, 'e');
@@ -78,7 +80,7 @@ void fp::Maze::MazeUpdate(int x, int y, char d) {
             southwall_[x][y] = true;
         }
     }
-    
+    // When robot is facing in the South direction
     if(d == 'S') {
         if(fp::API::wallFront()) {
             fp::API::setWall(x, y, 's');

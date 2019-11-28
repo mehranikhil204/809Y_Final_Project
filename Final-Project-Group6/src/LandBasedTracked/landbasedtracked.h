@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "../LandBasedRobot/landbasedrobot.h"
+#include "../API/api.h"
 
 namespace fp
 {
@@ -18,7 +19,10 @@ public:
         virtual char GetDirection() override;
         virtual void MoveForward() override;
         virtual void TurnLeft() override;
-        virtual void TurnRight() override;	
+        virtual void TurnRight() override;
+
+        int get_x() const;
+        int get_y() const; 	
         virtual ~LandBasedTracked() {}
 		
 };
