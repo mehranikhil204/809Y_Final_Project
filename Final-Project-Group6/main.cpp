@@ -11,7 +11,15 @@ int main()
     fp::LandBasedWheeled robot(2, "robot1", 0, 10, 10, 10, 0, 0, 0, 'N');
     
     fp::Algorithm dfs;
-    dfs.SolveDFS(robot, maze);
+    int i = 1;
+    while(dfs.CheckGoal(robot.get_x(), robot.get_y()) == false) {
+        std::cerr << "BFS Iteration " << i << std::endl;
+        dfs.SolveBFS(robot, maze);
+        dfs.MoveRobot(robot, maze);
+        if(i == 40)
+            break;
+        i = i + 1;    
+    }
     /*
     for(int i = 0; i<=50; i++) {
         std::cerr << "Forward Move " << robot.get_x() << " " << robot.get_y() << std::endl;

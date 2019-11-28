@@ -28,7 +28,7 @@ bool fp::Algorithm::CheckSummary(std::pair<std::pair<int, int>, char> pos) {
     return false;
 }
 
-void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
+void fp::Algorithm::SolveBFS(fp::LandBasedWheeled& robot, fp::Maze& maze) {
     
     current_ = {{robot.get_x(), robot.get_y()}, robot.GetDirection()};
     int x = current_.first.first;
@@ -55,9 +55,9 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
             }
         
             if(dir == 'W') {
-                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x+1, y}, 'W'})== false) { // F
-                    frontier_.push_back({{x+1, y}, 'W'});
-                    parent_.insert({{{x+1, y}, 'W'}, current_});
+                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // F
+                    frontier_.push_back({{x-1, y}, 'W'});
+                    parent_.insert({{{x-1, y}, 'W'}, current_});
                 }
                 if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'})== false) { // R
                     frontier_.push_back({{x, y+1}, 'N'});
@@ -70,9 +70,9 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
             }
         
             if(dir == 'E') {
-                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x-1, y}, 'E'})== false) { // F
-                    frontier_.push_back({{x-1, y}, 'E'});
-                    parent_.insert({{{x-1, y}, 'E'}, current_});
+                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'})== false) { // F
+                    frontier_.push_back({{x+1, y}, 'E'});
+                    parent_.insert({{{x+1, y}, 'E'}, current_});
                 }
                 if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) { // R
                     frontier_.push_back({{x, y-1}, 'S'});
@@ -101,11 +101,11 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
         }
         if(frontier_.size() != 0) {
             summary_.push_back(current_);
-            current_ = frontier_.back();
+            current_ = frontier_[0];
             x = current_.first.first;
             y = current_.first.second;
             dir = current_.second;
-            frontier_.pop_back();
+            frontier_.erase(frontier_.begin());
         }
     }
     path_.push_back(current_);
@@ -113,5 +113,67 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
         std::cerr << path_.back().first.first << " " << path_.back().first.second << " " << path_.back().second<< std::endl;
         path_.push_back(parent_.at(path_.back()));
     }
-    path_.push_back(summary_[0]);
+    std::reverse(path_.begin(), path_.end());
+}
+
+bool fp::Algorithm::MoveRobot(fp::LandBasedWheeled& robot, fp::Maze& maze) {
+    
+    int prev_x, prev_y;
+    for(unsigned int i = 1; i < path_.size(); i++) {
+        std::cerr << "robot " << robot.get_x() << ' ' << robot.get_y() << ' ' << robot.GetDirection() << " Next -> ";
+        std::cerr << path_[i].first.first << ' ' << path_[i].first.second << ' ' << path_[i].second << std::endl;
+        prev_x = robot.get_x();
+        prev_y = robot.get_y();
+        if(robot.GetDirection() == 'N' && path_[i].second == 'N' && maze.get_northwall(prev_x, prev_y) == false)
+            robot.MoveForward();
+        else if(robot.GetDirection() == 'N' && path_[i].second == 'E' && maze.get_eastwall(prev_x, prev_y) == false) {
+                robot.TurnRight();
+                robot.MoveForward();
+            }
+            else if(robot.GetDirection() == 'N' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false) {
+                    robot.TurnLeft();
+                    robot.MoveForward();
+            }
+            else if(robot.GetDirection() == 'E' && path_[i].second == 'E' && maze.get_eastwall(prev_x, prev_y) == false)
+                    robot.MoveForward();
+                 else if(robot.GetDirection() == 'E' && path_[i].second == 'N' && maze.get_northwall(prev_x, prev_y) == false) {
+                            robot.TurnLeft();
+                            robot.MoveForward();
+                        }
+                        else if(robot.GetDirection() == 'E' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false) {
+                                robot.TurnRight();
+                                robot.MoveForward();
+                             }
+                             else if(robot.GetDirection() == 'W' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false)
+                                    robot.MoveForward();
+                                  else if(robot.GetDirection() == 'W' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false) {
+                                        robot.TurnLeft();
+                                        robot.MoveForward();
+                                        }
+                                        else if(robot.GetDirection() == 'W' && path_[i].second == 'N' && maze.get_northwall(prev_x, prev_y) == false) {
+                                                robot.TurnRight();
+                                                robot.MoveForward();
+                                            }
+                                            else if(robot.GetDirection() == 'S' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false)
+                                                    robot.MoveForward();
+                                                else if(robot.GetDirection() == 'S' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false) {
+                                                        robot.TurnRight();
+                                                        robot.MoveForward();
+                                                    }
+                                                    else if(robot.GetDirection() == 'S' && path_[i].second == 'E' && maze.get_eastwall(prev_x, prev_y) == false) {
+                                                            robot.TurnLeft();
+                                                            robot.MoveForward();
+                                                            }
+        if(prev_x == robot.get_x() && prev_y == robot.get_y()) {
+            summary_.clear();
+            path_.clear();
+            frontier_.clear();
+            parent_.clear();
+            return false;
+        }
+        else {
+            maze.MazeUpdate(robot.get_x(), robot.get_y(), robot.GetDirection());
+        }
+    }
+    return true;
 }

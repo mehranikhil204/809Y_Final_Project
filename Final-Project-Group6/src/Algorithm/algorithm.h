@@ -22,9 +22,10 @@ class Algorithm
         
     public:
         bool CheckGoal(int, int);
-        void SolveDFS(fp::LandBasedWheeled, fp::Maze);
+        void SolveBFS(fp::LandBasedWheeled&, fp::Maze&);
         bool CheckSummary(std::pair<std::pair<int, int>, char>);
         bool CheckFrontier(std::pair<std::pair<int, int>, char>);
+        bool MoveRobot(fp::LandBasedWheeled&, fp::Maze&);
 
 };
 

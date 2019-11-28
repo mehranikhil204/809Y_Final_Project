@@ -4,10 +4,30 @@ fp::Maze::Maze()
 {
     for(int i = 0; i < 16; i++) {
         for(int j = 0; j < 16; j++) {
-            northwall_[i][j] = false;
-            eastwall_[i][j] = false;
-            westwall_[i][j] = false;
-            southwall_[i][j] = false;
+            if(i == 0) {
+                westwall_[i][j] = true;
+                fp::API::setWall(i, j, 'w');
+            }
+            if(i == 15) {
+                eastwall_[i][j] = true;
+                fp::API::setWall(i, j, 'e');
+            }
+            if(j == 0){
+                 southwall_[i][j] = true;
+                 fp::API::setWall(i, j, 's');
+            }
+            if(j == 15){
+                 northwall_[i][j] = true;
+                 fp::API::setWall(i, j, 'n');
+            }   
+            
+            if(i != 0 && j != 0 && i != 15 && j != 15)
+            { 
+                northwall_[i][j] = false;
+                eastwall_[i][j] = false;
+                westwall_[i][j] = false;
+                southwall_[i][j] = false;
+            }
         }
     }
 }
