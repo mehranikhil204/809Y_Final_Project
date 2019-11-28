@@ -14,7 +14,7 @@ bool fp::Algorithm::CheckGoal(int x, int y) {
 
 bool fp::Algorithm::CheckFrontier(std::pair<std::pair<int, int>, char> pos) {
     for(auto i:frontier_) {
-        if((i.first.first == pos.first.first) && (i.first.second == pos.first.second))
+        if((i.first.first == pos.first.first) && (i.first.second == pos.first.second) && (i.second == pos.second))
             return true;
     }
     return false;
@@ -22,7 +22,7 @@ bool fp::Algorithm::CheckFrontier(std::pair<std::pair<int, int>, char> pos) {
 
 bool fp::Algorithm::CheckSummary(std::pair<std::pair<int, int>, char> pos) {
     for(auto i:summary_) {
-        if((i.first.first == pos.first.first) && (i.first.second == pos.first.second))
+        if((i.first.first == pos.first.first) && (i.first.second == pos.first.second) && (i.second == pos.second))
             return true;
     }
     return false;
