@@ -1,10 +1,7 @@
 #include "maze.h"
 
-<<<<<<< HEAD
 //initializing wall matrix
-=======
 // Maze class Constructor
->>>>>>> branch_nikhil
 fp::Maze::Maze()
 {
     // All walls except boundary walls are initialized as false 

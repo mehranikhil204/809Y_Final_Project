@@ -17,10 +17,7 @@ class Algorithm
 {
     private:
     
-<<<<<<< HEAD
-=======
         // Vector of pairs for storing over all summary
->>>>>>> branch_nikhil
         std::vector<std::pair<std::pair<int, int>, char>> summary_;
         // Map object for pairs for storing parent
         std::map<std::pair<std::pair<int, int>, char>, std::pair<std::pair<int, int>, char>> parent_;

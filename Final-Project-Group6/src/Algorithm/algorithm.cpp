@@ -62,10 +62,7 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
                     parent_.insert({{{x, y-1}, 'S'}, current_});
                 }
             }
-<<<<<<< HEAD
-=======
             // If current direction is west
->>>>>>> branch_nikhil
             if(dir == 'W') {
                 // Check further west
                 if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // F
@@ -105,9 +102,6 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
                     frontier_.push_back({{x, y+1}, 'N'});
                     parent_.insert({{{x, y+1}, 'N'}, current_});
                 }
-<<<<<<< HEAD
-            }    
-=======
                 // Check in the opposite direction i.e. west
                 if(maze.get_eastwall(x, y) == true && maze.get_southwall(x, y) == true && maze.get_northwall(x, y) == true) {
                     frontier_.push_back({{x-1, y}, 'W'});
@@ -115,7 +109,6 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
                 }
             }
             // If current direction is South
->>>>>>> branch_nikhil
             if(dir == 'S') {
                 // Check further south
                 if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) {// F
@@ -138,7 +131,7 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
                     parent_.insert({{{x, y+1}, 'N'}, current_});
                 }
             }
-        }    
+        }
         if(frontier_.size() != 0) {
             summary_.push_back(current_);
             current_ = frontier_[0];

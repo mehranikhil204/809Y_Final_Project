@@ -16,10 +16,6 @@ int fp::LandBasedTracked::get_y() const {
 
 void fp::LandBasedTracked::MoveForward()
 {
-<<<<<<< HEAD
-    std::cout<<"LandBasedTracked::MoveForward is called\n";
-    API::moveForward();
-=======
 	fp::API::moveForward();
     if(fp::LandBasedTracked::GetDirection() == 'N') {
         x_ = x_;
@@ -43,7 +39,6 @@ void fp::LandBasedTracked::MoveForward()
             }
         }
     }
->>>>>>> branch_nikhil
 }
 
 void fp::LandBasedTracked::TurnLeft()
