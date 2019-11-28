@@ -12,18 +12,9 @@ bool fp::Algorithm::CheckGoal(int x, int y) {
     return false;
 }
 
-<<<<<<< HEAD
 bool fp::Algorithm::CheckFrontier(std::pair<std::pair<int, int>, char> pos) {
     for(auto i:frontier_) {
         if((i.first.first == pos.first.first) && (i.first.second == pos.first.second) && (i.second == pos.second))
-=======
-//boolean function for whether or not next position & direction has been 
-//i = next direction
-//pos = direction
-bool fp::Algorithm::CheckFrontier(std::pair<std::pair<int, int>, char> pos) {
-    for(auto i:frontier_) {
-        if((i.first.first == pos.first.first) && (i.first.second == pos.first.second))
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
             return true;
     }
     return false;
@@ -31,21 +22,13 @@ bool fp::Algorithm::CheckFrontier(std::pair<std::pair<int, int>, char> pos) {
 
 bool fp::Algorithm::CheckSummary(std::pair<std::pair<int, int>, char> pos) {
     for(auto i:summary_) {
-<<<<<<< HEAD
         if((i.first.first == pos.first.first) && (i.first.second == pos.first.second) && (i.second == pos.second))
-=======
-        if((i.first.first == pos.first.first) && (i.first.second == pos.first.second))
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
             return true;
     }
     return false;
 }
 
-<<<<<<< HEAD
 void fp::Algorithm::SolveBFS(fp::LandBasedWheeled& robot, fp::Maze& maze) {
-=======
-void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
     
     current_ = {{robot.get_x(), robot.get_y()}, robot.GetDirection()};
     int x = current_.first.first;
@@ -58,7 +41,6 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
         if(fp::Algorithm::CheckSummary(current_) == false) {
             if(dir == 'N') {
                 if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'}) == false) { // F
-<<<<<<< HEAD
                     frontier_.push_back({{x, y+1}, 'N'});
                     parent_.insert({{{x, y+1}, 'N'}, current_});
                 }
@@ -69,43 +51,9 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
                 if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // L
                     frontier_.push_back({{x-1, y}, 'W'});
                     parent_.insert({{{x-1, y}, 'W'}, current_});
-=======
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'N');
-                    
-                    frontier_.push_back({{x, y+1}, 'N'});
-                    parent_.insert({{{x, y+1}, 'N'}, current_});
-                    
-                    std::cerr << "Forward Move " << robot.get_x() << " " << robot.get_y() << std::endl;
-                    robot.MoveForward();
-                    
-                    SolveDFS(robot, maze);
-                }
-                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'}) == false) { // R
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'N');
-                    std::cerr << "Turning Right" << std::endl;
-                    robot.TurnRight();
-                    
-                    frontier_.push_back({{x+1, y}, 'E'});
-                    parent_.insert({{{x+1, y}, 'E'}, current_});
-
-                    SolveDFS(robot, maze);
-                }
-                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // L
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'N');
-                    
-                    frontier_.push_back({{x-1, y}, 'W'});
-                    parent_.insert({{{x-1, y}, 'W'}, current_});
-
-                    std::cerr << "Turning Left" << std::endl;
-                    robot.TurnLeft();
-                    
-                    SolveDFS(robot, maze);
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
                 }
             }
-        
             if(dir == 'W') {
-<<<<<<< HEAD
                 if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // F
                     frontier_.push_back({{x-1, y}, 'W'});
                     parent_.insert({{{x-1, y}, 'W'}, current_});
@@ -133,87 +81,9 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
                     frontier_.push_back({{x, y+1}, 'N'});
                     parent_.insert({{{x, y+1}, 'N'}, current_});
                 }
-=======
-                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x+1, y}, 'W'})== false) { // F
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'W');
-                    
-                    frontier_.push_back({{x+1, y}, 'W'});
-                    parent_.insert({{{x+1, y}, 'W'}, current_});
-                    std::cerr << "Forward Move " << robot.get_x() << " " << robot.get_y() << std::endl;
-                    
-                    robot.MoveForward();
-                    
-                    SolveDFS(robot, maze);
-                }
-                if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'})== false) { // R
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'W');                   
-                    
-                    frontier_.push_back({{x, y+1}, 'N'});
-                    parent_.insert({{{x, y+1}, 'N'}, current_});
-
-
-                    std::cerr << "Turning Right" << std::endl;
-                    robot.TurnRight();
-                    
-                    SolveDFS(robot, maze);
-                }
-                if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) {// L
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'W');
-         
-                    frontier_.push_back({{x, y-1}, 'S'});
-                    parent_.insert({{{x, y-1}, 'S'}, current_});
-
-
-                    std::cerr << "Turning Left" << std::endl;
-                    robot.TurnLeft();
-                    
-                    SolveDFS(robot, maze);
-            }
-            }
-            if(dir == 'E') {
-                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x-1, y}, 'E'})== false) { // F
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'E');
-                    
-                    frontier_.push_back({{x-1, y}, 'E'});
-                    parent_.insert({{{x-1, y}, 'E'}, current_});
-                    std::cerr << "Forward Move " << robot.get_x() << " " << robot.get_y() << std::endl;
-                    
-                    robot.MoveForward();
-                    
-                    SolveDFS(robot, maze);
-                }
-                if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) { // R
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'E');
-                    
-                    frontier_.push_back({{x, y-1}, 'S'});
-                    parent_.insert({{{x, y-1}, 'S'}, current_});
-
-                    
-                    std::cerr << "Turning Right" << std::endl;
-                    robot.TurnRight();
-                    
-                    SolveDFS(robot, maze);
-
-                }
-                if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'})== false) { // L
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'E');
-                    
-                    frontier_.push_back({{x, y+1}, 'N'});
-                    parent_.insert({{{x, y+1}, 'N'}, current_});
-                  
-                    
-                    std::cerr << "Turning Left" << std::endl;
-                    robot.TurnLeft();
-                    
-                    SolveDFS(robot, maze);
-
-            }
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
-            }
-        
+            }    
             if(dir == 'S') {
                 if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) {// F
-<<<<<<< HEAD
                     frontier_.push_back({{x, y-1}, 'S'});
                     parent_.insert({{{x, y-1}, 'S'}, current_});
                 }
@@ -224,58 +94,16 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
                 if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'})== false) { // L
                     frontier_.push_back({{x+1, y}, 'E'});
                     parent_.insert({{{x+1, y}, 'E'}, current_});
-=======
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'S');
-                    
-                    frontier_.push_back({{x, y-1}, 'S'});
-                    parent_.insert({{{x, y-1}, 'S'}, current_});
-                    std::cerr << "Forward Move " << robot.get_x() << " " << robot.get_y() << std::endl;
-                    
-                    robot.MoveForward();
-                    
-                    SolveDFS(robot, maze);
-                }
-                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // R
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'S');
-                    
-                    frontier_.push_back({{x-1, y}, 'W'});
-                    parent_.insert({{{x-1, y}, 'W'}, current_});
-
-                    
-                    std::cerr << "Turning Right" << std::endl;
-                    robot.TurnRight();
-                    
-                    SolveDFS(robot, maze);
-                }
-                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'})== false) { // L
-                    maze.MazeUpdate(robot.get_x(),robot.get_y(),'S');
-                    
-                    frontier_.push_back({{x+1, y}, 'E'});
-                    parent_.insert({{{x+1, y}, 'E'}, current_});
-
-                    std::cerr << "Turning Left" << std::endl;
-                    robot.TurnLeft();
-                    
-                    SolveDFS(robot, maze);
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
                 }
             }
-        }
+        }    
         if(frontier_.size() != 0) {
             summary_.push_back(current_);
-<<<<<<< HEAD
             current_ = frontier_[0];
             x = current_.first.first;
             y = current_.first.second;
             dir = current_.second;
             frontier_.erase(frontier_.begin());
-=======
-            current_ = frontier_.back();
-            x = current_.first.first;
-            y = current_.first.second;
-            dir = current_.second;
-            frontier_.pop_back();
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
         }
     }
     path_.push_back(current_);
@@ -283,7 +111,6 @@ void fp::Algorithm::SolveDFS(fp::LandBasedWheeled robot, fp::Maze maze) {
         std::cerr << path_.back().first.first << " " << path_.back().first.second << " " << path_.back().second<< std::endl;
         path_.push_back(parent_.at(path_.back()));
     }
-<<<<<<< HEAD
     std::reverse(path_.begin(), path_.end());
 }
 
@@ -348,8 +175,3 @@ bool fp::Algorithm::MoveRobot(fp::LandBasedWheeled& robot, fp::Maze& maze) {
     }
     return true;
 }
-=======
-    path_.push_back(summary_[0]);
-}
-
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d

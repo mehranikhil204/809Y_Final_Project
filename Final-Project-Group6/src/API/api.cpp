@@ -98,11 +98,9 @@ std::cin >> response;
 return response == "true";
 }
 
-<<<<<<< HEAD
-=======
 void fp::API::ackReset() {
     std::cout << "ackReset" << std::endl;
     std::string ack;
     std::cin >> ack;
 }
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
+

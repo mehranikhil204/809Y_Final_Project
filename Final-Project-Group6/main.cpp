@@ -10,32 +10,16 @@ int main()
     // Parameters wheel_number, name, speed, width, length, height, capacity, x, y, direction 
     fp::LandBasedWheeled robot(2, "robot1", 0, 10, 10, 10, 0, 0, 0, 'N');
     
-    fp::Algorithm dfs;
-<<<<<<< HEAD
+    fp::Algorithm bfs;
     int i = 1;
-    while(dfs.CheckGoal(robot.get_x(), robot.get_y()) == false) {
+    while(bfs.CheckGoal(robot.get_x(), robot.get_y()) == false) {
         std::cerr << "BFS Iteration " << i << std::endl;
-        dfs.SolveBFS(robot, maze);
-        dfs.MoveRobot(robot, maze);
+        bfs.SolveBFS(robot, maze);
+        bfs.MoveRobot(robot, maze);
         if(i == 40)
             break;
         i = i + 1;    
     }
-    /*
-    for(int i = 0; i<=50; i++) {
-        std::cerr << "Forward Move " << robot.get_x() << " " << robot.get_y() << std::endl;
-        if(fp::API::wallFront()) {
-            fp::API::setWall(robot.get_x(), robot.get_y(), 'r');
-            std::cerr << "Turning Right" << std::endl;
-            robot.TurnRight();
-        }
-        else
-            robot.MoveForward();
-    }
-    */
-=======
-    dfs.SolveDFS(robot, maze);
     
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
     return 0;
 }
