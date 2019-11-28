@@ -1,9 +1,15 @@
 #include "maze.h"
 
+<<<<<<< HEAD
+=======
+
+//initializing wall matrix
+>>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
 fp::Maze::Maze()
 {
     for(int i = 0; i < 16; i++) {
         for(int j = 0; j < 16; j++) {
+<<<<<<< HEAD
             if(i == 0) {
                 westwall_[i][j] = true;
                 fp::API::setWall(i, j, 'w');
@@ -32,12 +38,44 @@ fp::Maze::Maze()
     }
 }
 
+=======
+            northwall_[i][j] = false;
+            eastwall_[i][j] = false;
+            westwall_[i][j] = false;
+            southwall_[i][j] = false;
+//            if(i = 0 && j =0){
+//                southwall_[i][j] = true;
+//                westwall_[i][j] = true;
+//            }
+//            if(i = 16 && j=0){
+//                southwall_[i][j] = true;
+//                eastwall_[i][j] = true;
+//            }
+//            if(i = 0 && j=16){
+//                northwall_[i][j] = true;
+//                westwall_[i][j] = true;
+//            }
+//            if(i = 16 && j=16){
+//                northwall_[i][j] = true;
+//                eastwall_[i][j] = true;
+//            }
+//            if((i != 0 || i != 16) && j=0){
+//                southwall_[i][j] = true;
+//            }
+    }
+}
+}
+>>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
 void fp::Maze::MazeUpdate(int x, int y, char d) {
     
     if(d == 'N') {
         if(fp::API::wallFront()) {
             fp::API::setWall(x, y, 'n');
             northwall_[x][y] = true;
+<<<<<<< HEAD
+=======
+            //color maze wall
+>>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
         }
         if(fp::API::wallLeft()) {
             fp::API::setWall(x, y, 'w');
