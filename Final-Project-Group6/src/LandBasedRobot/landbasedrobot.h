@@ -26,6 +26,8 @@ public:
         virtual void MoveForward() = 0;
         virtual void TurnLeft() = 0;
         virtual void TurnRight() = 0;
+        virtual int get_x() const = 0;
+        virtual int get_y() const = 0;
         virtual ~LandBasedRobot() {}
 };
 
