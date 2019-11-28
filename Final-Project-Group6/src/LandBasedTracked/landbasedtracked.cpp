@@ -1,7 +1,8 @@
-#include <iostream>
-#include <string>
-
 #include "landbasedtracked.h"
+#include "../API/api.h"
+#include <iostream>
+
+
 char fp::LandBasedTracked::GetDirection()
 {
     return 'd';
@@ -9,7 +10,8 @@ char fp::LandBasedTracked::GetDirection()
 
 void fp::LandBasedTracked::MoveForward()
 {
-	std::cout << "LandBasedTracked::GoUp called" << std::endl;
+    std::cout<<"LandBasedTracked::MoveForward is called\n";
+    API::moveForward();
 }
 
 void fp::LandBasedTracked::TurnLeft()
