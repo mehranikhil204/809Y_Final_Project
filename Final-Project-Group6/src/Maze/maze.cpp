@@ -82,7 +82,7 @@ void fp::Maze::MazeUpdate(int x, int y, char d) {
     if(d == 'S') {
         if(fp::API::wallFront()) {
             fp::API::setWall(x, y, 's');
-            northwall_[x][y] = true;
+            southwall_[x][y] = true;
         }
         if(fp::API::wallLeft()) {
             fp::API::setWall(x, y, 'e');

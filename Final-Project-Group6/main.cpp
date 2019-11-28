@@ -15,22 +15,9 @@ int main()
     while(dfs.CheckGoal(robot.get_x(), robot.get_y()) == false) {
         std::cerr << "BFS Iteration " << i << std::endl;
         dfs.SolveBFS(robot, maze);
-        dfs.MoveRobot(robot, maze);
-        if(i == 40)
-            break;
-        i = i + 1;    
+        dfs.MoveRobot(robot, maze);   
+    i++;
     }
-    /*
-    for(int i = 0; i<=50; i++) {
-        std::cerr << "Forward Move " << robot.get_x() << " " << robot.get_y() << std::endl;
-        if(fp::API::wallFront()) {
-            fp::API::setWall(robot.get_x(), robot.get_y(), 'r');
-            std::cerr << "Turning Right" << std::endl;
-            robot.TurnRight();
-        }
-        else
-            robot.MoveForward();
-    }
-    */
+
     return 0;
 }

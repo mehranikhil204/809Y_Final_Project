@@ -52,6 +52,10 @@ void fp::Algorithm::SolveBFS(fp::LandBasedWheeled& robot, fp::Maze& maze) {
                     frontier_.push_back({{x-1, y}, 'W'});
                     parent_.insert({{{x-1, y}, 'W'}, current_});
                 }
+                if(maze.get_eastwall(x, y) == true && maze.get_westwall(x, y) == true && maze.get_northwall(x, y) == true) {
+                    frontier_.push_back({{x, y-1}, 'S'});
+                    parent_.insert({{{x, y-1}, 'S'}, current_});
+                }
             }
         
             if(dir == 'W') {
@@ -66,6 +70,10 @@ void fp::Algorithm::SolveBFS(fp::LandBasedWheeled& robot, fp::Maze& maze) {
                 if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) {// L
                     frontier_.push_back({{x, y-1}, 'S'});
                     parent_.insert({{{x, y-1}, 'S'}, current_});
+                }
+                if(maze.get_southwall(x, y) == true && maze.get_westwall(x, y) == true && maze.get_northwall(x, y) == true) {
+                    frontier_.push_back({{x+1, y}, 'E'});
+                    parent_.insert({{{x+1, y}, 'E'}, current_});
                 }
             }
         
@@ -82,6 +90,10 @@ void fp::Algorithm::SolveBFS(fp::LandBasedWheeled& robot, fp::Maze& maze) {
                     frontier_.push_back({{x, y+1}, 'N'});
                     parent_.insert({{{x, y+1}, 'N'}, current_});
                 }
+                if(maze.get_eastwall(x, y) == true && maze.get_southwall(x, y) == true && maze.get_northwall(x, y) == true) {
+                    frontier_.push_back({{x-1, y}, 'W'});
+                    parent_.insert({{{x-1, y}, 'W'}, current_});
+                }
             }
         
             if(dir == 'S') {
@@ -96,6 +108,10 @@ void fp::Algorithm::SolveBFS(fp::LandBasedWheeled& robot, fp::Maze& maze) {
                 if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'})== false) { // L
                     frontier_.push_back({{x+1, y}, 'E'});
                     parent_.insert({{{x+1, y}, 'E'}, current_});
+                }
+                if(maze.get_eastwall(x, y) == true && maze.get_westwall(x, y) == true && maze.get_southwall(x, y) == true) {
+                    frontier_.push_back({{x, y+1}, 'N'});
+                    parent_.insert({{{x, y+1}, 'N'}, current_});
                 }
             }
         }
@@ -129,41 +145,61 @@ bool fp::Algorithm::MoveRobot(fp::LandBasedWheeled& robot, fp::Maze& maze) {
         else if(robot.GetDirection() == 'N' && path_[i].second == 'E' && maze.get_eastwall(prev_x, prev_y) == false) {
                 robot.TurnRight();
                 robot.MoveForward();
-            }
-            else if(robot.GetDirection() == 'N' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false) {
-                    robot.TurnLeft();
-                    robot.MoveForward();
-            }
-            else if(robot.GetDirection() == 'E' && path_[i].second == 'E' && maze.get_eastwall(prev_x, prev_y) == false)
-                    robot.MoveForward();
-                 else if(robot.GetDirection() == 'E' && path_[i].second == 'N' && maze.get_northwall(prev_x, prev_y) == false) {
-                            robot.TurnLeft();
-                            robot.MoveForward();
-                        }
-                        else if(robot.GetDirection() == 'E' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false) {
-                                robot.TurnRight();
-                                robot.MoveForward();
-                             }
-                             else if(robot.GetDirection() == 'W' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false)
-                                    robot.MoveForward();
-                                  else if(robot.GetDirection() == 'W' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false) {
-                                        robot.TurnLeft();
-                                        robot.MoveForward();
-                                        }
-                                        else if(robot.GetDirection() == 'W' && path_[i].second == 'N' && maze.get_northwall(prev_x, prev_y) == false) {
-                                                robot.TurnRight();
-                                                robot.MoveForward();
-                                            }
-                                            else if(robot.GetDirection() == 'S' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false)
-                                                    robot.MoveForward();
-                                                else if(robot.GetDirection() == 'S' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false) {
-                                                        robot.TurnRight();
-                                                        robot.MoveForward();
-                                                    }
-                                                    else if(robot.GetDirection() == 'S' && path_[i].second == 'E' && maze.get_eastwall(prev_x, prev_y) == false) {
-                                                            robot.TurnLeft();
-                                                            robot.MoveForward();
-                                                            }
+        }
+        else if(robot.GetDirection() == 'N' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false) {
+            robot.TurnLeft();
+            robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'N' && path_[i].second == 'S') {
+            robot.TurnRight();
+            robot.TurnRight();
+            robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'E' && path_[i].second == 'E' && maze.get_eastwall(prev_x, prev_y) == false)
+                robot.MoveForward();
+        else if(robot.GetDirection() == 'E' && path_[i].second == 'N' && maze.get_northwall(prev_x, prev_y) == false) {
+                robot.TurnLeft();
+                robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'E' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false) {
+                robot.TurnRight();
+                robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'E' && path_[i].second == 'W') {
+            robot.TurnRight();
+            robot.TurnRight();
+            robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'W' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false)
+            robot.MoveForward();
+        else if(robot.GetDirection() == 'W' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false) {
+            robot.TurnLeft();
+            robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'W' && path_[i].second == 'N' && maze.get_northwall(prev_x, prev_y) == false) {
+            robot.TurnRight();
+            robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'W' && path_[i].second == 'E') {
+            robot.TurnRight();
+            robot.TurnRight();
+            robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'S' && path_[i].second == 'S' && maze.get_southwall(prev_x, prev_y) == false)
+            robot.MoveForward();
+        else if(robot.GetDirection() == 'S' && path_[i].second == 'W' && maze.get_westwall(prev_x, prev_y) == false) {
+            robot.TurnRight();
+            robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'S' && path_[i].second == 'E' && maze.get_eastwall(prev_x, prev_y) == false) {
+            robot.TurnLeft();
+            robot.MoveForward();
+        }
+        else if(robot.GetDirection() == 'S' && path_[i].second == 'N') {
+            robot.TurnRight();
+            robot.TurnRight();
+            robot.MoveForward();
+        }
         if(prev_x == robot.get_x() && prev_y == robot.get_y()) {
             summary_.clear();
             path_.clear();
