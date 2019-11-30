@@ -1,11 +1,12 @@
 #include <iostream>
+#include <memory>
+#include "src/Maze/maze.h"
+#include "src/API/api.h"
+#include "src/LandBasedWheeled/landbasedwheeled.h"
+#include "src/Algorithm/algorithm.h"
 
 int main()
 {
-<<<<<<< Updated upstream
-	std::cout<<"Hello ENPM809Y"<<std::endl;
-	return 0;
-=======
     // Maze object
     fp::Maze maze;
     // Land Based Wheeled robot smart pointer
@@ -26,5 +27,4 @@ int main()
     }
 
     return 0;
->>>>>>> Stashed changes
 }

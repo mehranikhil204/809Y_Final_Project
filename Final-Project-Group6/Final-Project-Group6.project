@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CodeLite_Project Name="Final-Project-Group6" Version="10.0.0" InternalType="Console">
+<CodeLite_Project Name="Final-Project-Group6" Version="11000" InternalType="Console">
   <Plugins>
     <Plugin Name="qmake">
       <![CDATA[00010001N0005Debug000000000000]]>
@@ -7,6 +7,32 @@
   </Plugins>
   <Description/>
   <Dependencies/>
+  <VirtualDirectory Name="src">
+    <VirtualDirectory Name="Algorithm">
+      <File Name="src/Algorithm/algorithm.cpp"/>
+      <File Name="src/Algorithm/algorithm.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="API">
+      <File Name="src/API/api.cpp"/>
+      <File Name="src/API/api.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Maze">
+      <File Name="src/Maze/maze.cpp"/>
+      <File Name="src/Maze/maze.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="LandBasedTracked">
+      <File Name="src/LandBasedTracked/landbasedtracked.cpp"/>
+      <File Name="src/LandBasedTracked/landbasedtracked.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="LandBasedWheeled">
+      <File Name="src/LandBasedWheeled/landbasedwheeled.cpp"/>
+      <File Name="src/LandBasedWheeled/landbasedwheeled.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="LandBasedRobot">
+      <File Name="src/LandBasedRobot/landbasedrobot.h"/>
+    </VirtualDirectory>
+    <File Name="main.cpp"/>
+  </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
       <Compiler Options="-Wmain;-std=c++14;-Wall" C_Options="" Assembler="">
@@ -17,9 +43,15 @@
       </Linker>
       <ResourceCompiler Options=""/>
     </GlobalSettings>
-    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+    <Configuration Name="Debug" CompilerType="gnu g++" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-Wall" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
+        <IncludePath Value="src/Maze"/>
+        <IncludePath Value="src/Algorithm"/>
+        <IncludePath Value="src/LandBasedRobot"/>
+        <IncludePath Value="src/LandBasedTracked"/>
+        <IncludePath Value="src/LandBasedWheeled"/>
+        <IncludePath Value="src/API"/>
       </Compiler>
       <Linker Options="" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>
@@ -97,18 +129,4 @@
       </Completion>
     </Configuration>
   </Settings>
-  <VirtualDirectory Name="src">
-    <VirtualDirectory Name="LandBasedTracked">
-      <File Name="src/LandBasedTracked/landbasedtracked.cpp"/>
-      <File Name="src/LandBasedTracked/landbasedtracked.h"/>
-    </VirtualDirectory>
-    <VirtualDirectory Name="LandBasedWheeled">
-      <File Name="src/LandBasedWheeled/landbasedwheeled.cpp"/>
-      <File Name="src/LandBasedWheeled/landbasedwheeled.h"/>
-    </VirtualDirectory>
-    <VirtualDirectory Name="LandBasedRobot">
-      <File Name="src/LandBasedRobot/landbasedrobot.h"/>
-    </VirtualDirectory>
-    <File Name="main.cpp"/>
-  </VirtualDirectory>
 </CodeLite_Project>

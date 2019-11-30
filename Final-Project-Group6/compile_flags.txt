@@ -6,9 +6,6 @@
 -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed
 -I/usr/include/x86_64-linux-gnu
 -I/usr/include
-<<<<<<< Updated upstream
--I/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6
-=======
 -I/home/patodichayan/809Y_Final_Project/Final-Project-Group6
 -I/home/patodichayan/809Y_Final_Project/Final-Project-Group6/src/Maze
 -I/home/patodichayan/809Y_Final_Project/Final-Project-Group6/src/Algorithm
@@ -16,4 +13,3 @@
 -I/home/patodichayan/809Y_Final_Project/Final-Project-Group6/src/LandBasedTracked
 -I/home/patodichayan/809Y_Final_Project/Final-Project-Group6/src/LandBasedWheeled
 -I/home/patodichayan/809Y_Final_Project/Final-Project-Group6/src/API
->>>>>>> Stashed changes
