@@ -4,6 +4,17 @@
 // Maze class Constructor
 fp::Maze::Maze()
 {
+    fp::API::setColor(0,0,'w');
+    fp::API::setText(0,0,"Start");
+    fp::API::setColor(7,7,'w');
+    fp::API::setText(7,7,"Goal");
+    fp::API::setColor(7,8,'w');
+    fp::API::setText(7,8,"Goal");
+    fp::API::setColor(8,7,'w');
+    fp::API::setText(8,7,"Goal");
+    fp::API::setColor(8,8,'w');
+    fp::API::setText(8,8,"Goal");
+    
     // All walls except boundary walls are initialized as false 
     for(int i = 0; i < 16; i++) { // Looping in x-axis
         for(int j = 0; j < 16; j++) { // Looping in y-axis
@@ -37,6 +48,16 @@ fp::Maze::Maze()
 
 void fp::Maze::MazeUpdate(int x, int y, char d) {
     // When robot is facing in the North direction
+    fp::API::setColor(0,0,'G');
+    fp::API::setText(0,0,"Start");
+    fp::API::setColor(7,7,'G');
+    fp::API::setText(7,7,"Goal");
+    fp::API::setColor(7,8,'G');
+    fp::API::setText(7,8,"Goal");
+    fp::API::setColor(8,7,'G');
+    fp::API::setText(8,7,"Goal");
+    fp::API::setColor(8,8,'G');
+    fp::API::setText(8,8,"Goal");
     if(d == 'N') {
         if(fp::API::wallFront()) {
             fp::API::setWall(x, y, 'n');

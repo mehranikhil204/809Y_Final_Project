@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final_Project.workspace">
-  <int Value="0" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final_Project.workspace" Name="m_workspaceName"/>
-  <TabInfoArray Name="TabInfoArray"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Algorithm/algorithm.cpp" Name="FileName"/>
+      <int Value="213" Name="FirstVisibleLine"/>
+      <int Value="235" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/src/Algorithm/algorithm.h" Name="FileName"/>
+      <int Value="12" Name="FirstVisibleLine"/>
+      <int Value="39" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/nmehra/Desktop/ENPM809Yworkspace/Final_Project/Final-Project-Group6/main.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
   <SerializedObject Name="m_breakpoints">
     <long Value="0" Name="Count"/>
   </SerializedObject>

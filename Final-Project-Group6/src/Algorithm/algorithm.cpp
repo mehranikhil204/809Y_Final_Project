@@ -30,6 +30,7 @@ bool fp::Algorithm::CheckSummary(std::pair<std::pair<int, int>, char> pos) {
 
 void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze& maze) {
     
+    fp::API::clearAllColor();
     current_ = {{robot->get_x(), robot->get_y()}, robot->GetDirection()};
     int x = current_.first.first;
     int y = current_.first.second;
@@ -41,68 +42,68 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
         if(fp::Algorithm::CheckSummary(current_) == false) {
             // If current direction is North
             if(dir == 'N') {
-                // Check further North
-                if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'}) == false) { // F
-                    frontier_.push_back({{x, y+1}, 'N'});
-                    parent_.insert({{{x, y+1}, 'N'}, current_});
-                }
-                // Check in east direction
-                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'}) == false) { // R
-                    frontier_.push_back({{x+1, y}, 'E'});
-                    parent_.insert({{{x+1, y}, 'E'}, current_});
-                }
-                // Check in west direction
-                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // L
-                    frontier_.push_back({{x-1, y}, 'W'});
-                    parent_.insert({{{x-1, y}, 'W'}, current_});
-                }
-                // Check in the opposite direction i.e. south
+                // Check in the opposite direction i.e. south(down)
                 if(maze.get_eastwall(x, y) == true && maze.get_westwall(x, y) == true && maze.get_northwall(x, y) == true) {
                     frontier_.push_back({{x, y-1}, 'S'});
                     parent_.insert({{{x, y-1}, 'S'}, current_});
                 }
-            }
-            // If current direction is west
-            if(dir == 'W') {
-                // Check further west
-                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // F
-                    frontier_.push_back({{x-1, y}, 'W'});
-                    parent_.insert({{{x-1, y}, 'W'}, current_});
+                // Check in east(right) direction
+                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'}) == false) { // R
+                    frontier_.push_back({{x+1, y}, 'E'});
+                    parent_.insert({{{x+1, y}, 'E'}, current_});
                 }
-                // Check in north direction
-                if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'})== false) { // R
+                // Check further North(up) direction
+                if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'}) == false) { // F
                     frontier_.push_back({{x, y+1}, 'N'});
                     parent_.insert({{{x, y+1}, 'N'}, current_});
                 }
-                // Check in south direction
+                // Check in west(left) direction
+                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // L
+                    frontier_.push_back({{x-1, y}, 'W'});
+                    parent_.insert({{{x-1, y}, 'W'}, current_});
+                }
+            }
+            // If current direction is west
+            if(dir == 'W') {
+                // Check in south(down) direction
                 if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) {// L
                     frontier_.push_back({{x, y-1}, 'S'});
                     parent_.insert({{{x, y-1}, 'S'}, current_});
                 }
-                // Check in the opposite direction i.e. east
+                // Check in the opposite direction i.e. east(right)
                 if(maze.get_southwall(x, y) == true && maze.get_westwall(x, y) == true && maze.get_northwall(x, y) == true) {
                     frontier_.push_back({{x+1, y}, 'E'});
                     parent_.insert({{{x+1, y}, 'E'}, current_});
                 }
+                // Check in north(up) direction
+                if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'})== false) { // R
+                    frontier_.push_back({{x, y+1}, 'N'});
+                    parent_.insert({{{x, y+1}, 'N'}, current_});
+                }
+                // Check further west(left) direction
+                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // F
+                    frontier_.push_back({{x-1, y}, 'W'});
+                    parent_.insert({{{x-1, y}, 'W'}, current_});
+                }
             }
             // If current direction is East
             if(dir == 'E') {
-                // Check further east
-                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'})== false) { // F
-                    frontier_.push_back({{x+1, y}, 'E'});
-                    parent_.insert({{{x+1, y}, 'E'}, current_});
-                }
-                // Check in south direction
+                // Check in south(down) direction
                 if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) { // R
                     frontier_.push_back({{x, y-1}, 'S'});
                     parent_.insert({{{x, y-1}, 'S'}, current_});
                 }
-                // Check in north direction
+                // Check further east(right) direction
+                if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'})== false) { // F
+                    frontier_.push_back({{x+1, y}, 'E'});
+                    parent_.insert({{{x+1, y}, 'E'}, current_});
+                }
+                // Check in north(up) direction
                 if((maze.get_northwall(x, y) == false) && y < 15 && fp::Algorithm::CheckFrontier({{x, y+1}, 'N'})== false) { // L
                     frontier_.push_back({{x, y+1}, 'N'});
                     parent_.insert({{{x, y+1}, 'N'}, current_});
                 }
-                // Check in the opposite direction i.e. west
+                // Check in the opposite direction i.e. west(left)
                 if(maze.get_eastwall(x, y) == true && maze.get_southwall(x, y) == true && maze.get_northwall(x, y) == true) {
                     frontier_.push_back({{x-1, y}, 'W'});
                     parent_.insert({{{x-1, y}, 'W'}, current_});
@@ -110,25 +111,25 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
             }
             // If current direction is South
             if(dir == 'S') {
-                // Check further south
+                // Check further south(down)
                 if((maze.get_southwall(x, y) == false) && y > 0 && fp::Algorithm::CheckFrontier({{x, y-1}, 'S'})== false) {// F
                     frontier_.push_back({{x, y-1}, 'S'});
                     parent_.insert({{{x, y-1}, 'S'}, current_});
                 }
-                // Check in west direction
-                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // R
-                    frontier_.push_back({{x-1, y}, 'W'});
-                    parent_.insert({{{x-1, y}, 'W'}, current_});
-                }
-                // Check in east direction
+                // Check in east(right) direction
                 if((maze.get_eastwall(x, y) == false) && x < 15 && fp::Algorithm::CheckFrontier({{x+1, y}, 'E'})== false) { // L
                     frontier_.push_back({{x+1, y}, 'E'});
                     parent_.insert({{{x+1, y}, 'E'}, current_});
                 }
-                // Check in the opposite direction i.e.  north
+                // Check in the opposite direction i.e. north(up)
                 if(maze.get_eastwall(x, y) == true && maze.get_westwall(x, y) == true && maze.get_southwall(x, y) == true) {
                     frontier_.push_back({{x, y+1}, 'N'});
                     parent_.insert({{{x, y+1}, 'N'}, current_});
+                }
+                // Check in west(left) direction
+                if((maze.get_westwall(x, y) == false) && x > 0 && fp::Algorithm::CheckFrontier({{x-1, y}, 'W'})== false) { // R
+                    frontier_.push_back({{x-1, y}, 'W'});
+                    parent_.insert({{{x-1, y}, 'W'}, current_});
                 }
             }
         }
@@ -145,6 +146,7 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
     path_.push_back(current_);
     while(path_.back() != summary_[0]) {
         std::cerr << path_.back().first.first << " " << path_.back().first.second << " " << path_.back().second<< std::endl;
+        fp::API::setColor(path_.back().first.first, path_.back().first.second,'c');
         path_.push_back(parent_.at(path_.back()));
     }
     std::reverse(path_.begin(), path_.end());
@@ -230,6 +232,8 @@ bool fp::Algorithm::MoveRobot(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maz
         else {
             // Update maze as along the movement of the robot
             maze.MazeUpdate(robot->get_x(), robot->get_y(), robot->GetDirection());
+            fp::API::clearColor(robot->get_x(),robot->get_y());
+			fp::API::setText(robot->get_x(),robot->get_y(),std::string(1,robot->GetDirection()));
         }
     }
     return true;
