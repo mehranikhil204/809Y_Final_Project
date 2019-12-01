@@ -98,3 +98,9 @@ std::cin >> response;
 return response == "true";
 }
 
+void fp::API::ackReset() {
+    std::cout << "ackReset" << std::endl;
+    std::string ack;
+    std::cin >> ack;
+}
+
