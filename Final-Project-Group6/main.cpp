@@ -31,11 +31,15 @@ int main()
     // Algorithm class object
     fp::Algorithm bfs;
     
-    int i = 1;
+    int i{1};
+    bool res;
     // Loop until goal is reached
     while(bfs.CheckGoal(robot->get_x(), robot->get_y()) == false) {
         std::cerr << "BFS Iteration " << i << std::endl; // Output for Debugging
-        bfs.SolveBFS(robot, maze); // Running BFS algorithm 
+        res = bfs.SolveBFS(robot, maze); // Running BFS algorithm 
+        if(res == false) {
+            break;
+        }
         bfs.MoveRobot(robot, maze); // Moving robot along the path provided by BFS  
     i++; // Output for Debugging
     }
