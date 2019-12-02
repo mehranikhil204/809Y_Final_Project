@@ -13,7 +13,11 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Nikhil Mehra
+<<<<<<< HEAD
 Date                   :=02/12/19
+=======
+Date                   :=30/11/19
+>>>>>>> 597aa00922558ea07c1ffcc2fbe5fb4cb88ece09
 CodeLitePath           :=/home/nmehra/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
