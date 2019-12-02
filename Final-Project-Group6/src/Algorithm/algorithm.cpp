@@ -28,7 +28,7 @@ bool fp::Algorithm::CheckSummary(std::pair<std::pair<int, int>, char> pos) {
     return false;
 }
 
-void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze& maze) {
+bool fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze& maze) {
     
     fp::API::clearAllColor();
     current_ = {{robot->get_x(), robot->get_y()}, robot->GetDirection()};
@@ -141,6 +141,10 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
             dir = current_.second;
             frontier_.erase(frontier_.begin());
         }
+        else {
+            std::cerr<< "No path Found !!!" << std::endl;
+            return false;
+        }
     }
     // Back-tracking
     path_.push_back(current_);
@@ -150,6 +154,7 @@ void fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
         path_.push_back(parent_.at(path_.back()));
     }
     std::reverse(path_.begin(), path_.end());
+    return true;
 }
 
 bool fp::Algorithm::MoveRobot(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze& maze) {

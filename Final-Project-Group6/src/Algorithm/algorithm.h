@@ -36,7 +36,7 @@ class Algorithm
         // For checking if the goal is reached or not
         bool CheckGoal(int, int);
         // Heart of the BFS Algorithm with back-tracking
-        void SolveBFS(std::shared_ptr<fp::LandBasedRobot>, fp::Maze&);
+        bool SolveBFS(std::shared_ptr<fp::LandBasedRobot>, fp::Maze&);
         // For checking if any state is already explored or not
         bool CheckSummary(std::pair<std::pair<int, int>, char>);
         // For checking if any state is already in the frontier or not
