@@ -1,6 +1,17 @@
+/**
+ * @class LandBasedWheeled
+ * @author Pranali Desai, Nikhil Mehra, Chayan Kumar Patodi, Zhengliang Liu, Justin Huemme, Kumar Sambhav
+ * @date 12/02/2019
+ * @file landbasedwheeled.cpp
+ * @brief Method Definitions
+ */
 #include "landbasedwheeled.h"
 #include "../API/api.h"
-
+/**
+* @brief A function to get direction
+* @author Group 6
+* @return Result is the direction
+*/
 char fp::LandBasedWheeled::GetDirection() {
     return direction_;
 }
@@ -12,7 +23,11 @@ int fp::LandBasedWheeled::get_x() const {
 int fp::LandBasedWheeled::get_y() const {
     return y_;
 }
-
+/**
+* @brief A function to move robot further
+* @author Group 6
+* @return Result as x,y coordinate
+*/
 void fp::LandBasedWheeled::MoveForward()
 {
 	fp::API::moveForward();
@@ -39,7 +54,11 @@ void fp::LandBasedWheeled::MoveForward()
         }
     }
 }
-
+/**
+* @brief A function to turn robot left
+* @author Group 6
+* @return Result is the new direction
+*/
 void fp::LandBasedWheeled::TurnLeft()
 {
 	fp::API::turnLeft();
@@ -58,7 +77,11 @@ void fp::LandBasedWheeled::TurnLeft()
         }
     }
 }
-
+/**
+* @brief A function to turn robot right
+* @author Group 6
+* @return Result is the new direction
+*/
 void fp::LandBasedWheeled::TurnRight()
 {
 	fp::API::turnRight();
@@ -77,7 +100,11 @@ void fp::LandBasedWheeled::TurnRight()
         }
     }
 }
-
+/**
+* @brief A function to increase speed of robot
+* @author Group 6
+* @return Result is the new speed
+*/
 void fp::LandBasedWheeled::SpeedUp(int x)
 {
 	std::cout << "LandBasedWheeled::Speedup is called" << std::endl;

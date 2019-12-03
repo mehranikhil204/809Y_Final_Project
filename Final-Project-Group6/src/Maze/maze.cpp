@@ -1,3 +1,10 @@
+/**
+ * @class maze
+ * @author Pranali Desai, Nikhil Mehra, Chayan Kumar Patodi, Zhengliang Liu, Justin Huemme, Kumar Sambhav
+ * @date 12/02/2019
+ * @file maze.cpp
+ * @brief Method Definitions
+ */
 #include "maze.h"
 
 //initializing wall matrix
@@ -45,7 +52,14 @@ fp::Maze::Maze()
         }
     }
 }
-
+/**
+* @brief A function to update maze
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @param d is the direction
+* @return Result True or False
+*/
 void fp::Maze::MazeUpdate(int x, int y, char d) {
     // When robot is facing in the North direction
     fp::API::setColor(0,0,'G');
@@ -118,39 +132,93 @@ void fp::Maze::MazeUpdate(int x, int y, char d) {
         }
     }
 }
-
+/**
+* @brief A function to display maze data
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result the maze display
+*/
 void fp::Maze::DisplayMazeData(int x, int y) {
     std::cout<< "Data at (" << x << "," << y << "): N:" << northwall_[x][y] << " E:" << eastwall_[x][y] << " W:" << westwall_[x][y] << " S:" << southwall_[x][y] << std::endl;
 }
-
+/**
+* @brief A function get if there is a north wall
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result True or False
+*/
 bool fp::Maze::get_northwall(int x, int y) const{
     return northwall_[x][y];
 }
-
+/**
+* @brief A function get if there is a east wall
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result True or False
+*/
 bool fp::Maze::get_eastwall(int x, int y) const{
     return eastwall_[x][y];
 }
-
+/**
+* @brief A function get if there is a west wall
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result True or False
+*/
 bool fp::Maze::get_westwall(int x, int y) const{
     return westwall_[x][y];
 }
-
+/**
+* @brief A function get if there is a south wall
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result True or False
+*/
 bool fp::Maze::get_southwall(int x, int y) const{
     return southwall_[x][y];
 }
-
+/**
+* @brief A function set a north wall
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result True or False
+*/
 void fp::Maze::set_northwall(int x, int y) {
     northwall_[x][y] = true;
 }
-
+/**
+* @brief A function set a east wall
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result True or False
+*/
 void fp::Maze::set_eastwall(int x, int y) {
     eastwall_[x][y] = true;
 }
-
+/**
+* @brief A function set a west wall
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result True or False
+*/
 void fp::Maze::set_westwall(int x, int y) {
     westwall_[x][y] = true;
 }
-
+/**
+* @brief A function set a south wall
+* @author Group 6
+* @param x is the x coordinate 
+* @param y is the y coordinate
+* @return Result True or False
+*/
 void fp::Maze::set_southwall(int x, int y) {
     southwall_[x][y] = true;
 }

@@ -1,3 +1,10 @@
+/**
+ * @class LandBasedTracked
+ * @author Pranali Desai, Nikhil Mehra, Chayan Kumar Patodi, Zhengliang Liu, Justin Huemme, Kumar Sambhav
+ * @date 12/02/2019
+ * @file landbasedtracked.cpp
+ * @brief Method Definitions
+ */
 #include "landbasedtracked.h"
 #include "../API/api.h"
 #include <iostream>
@@ -13,7 +20,11 @@ int fp::LandBasedTracked::get_x() const {
 int fp::LandBasedTracked::get_y() const {
     return y_;
 }
-
+/**
+ * @brief Go forward
+ * @param x coordinate
+ * @param y coordinate
+ */
 void fp::LandBasedTracked::MoveForward()
 {
 	fp::API::moveForward();
@@ -40,7 +51,11 @@ void fp::LandBasedTracked::MoveForward()
         }
     }
 }
-
+/**
+ * @brief Go Left Method
+ * @param x coordinate
+ * @param y coordinate
+ */
 void fp::LandBasedTracked::TurnLeft()
 {
 	fp::API::turnLeft();
@@ -59,7 +74,11 @@ void fp::LandBasedTracked::TurnLeft()
         }
     }
 }
-
+/**
+ * @brief Go Right Method
+ * @param x coordinate
+ * @param y coordinate
+ */
 void fp::LandBasedTracked::TurnRight()
 {
 	fp::API::turnRight();

@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-./Debug/src_Algorithm_algorithm.cpp.o ./Debug/src_LandBasedTracked_landbasedtracked.cpp.o ./Debug/src_API_api.cpp.o ./Debug/main.cpp.o ./Debug/src_Maze_maze.cpp.o ./Debug/src_LandBasedWheeled_landbasedwheeled.cpp.o
-=======
-./Debug/src_LandBasedWheeled_landbasedwheeled.cpp.o ./Debug/src_API_api.cpp.o ./Debug/src_LandBasedTracked_landbasedtracked.cpp.o ./Debug/src_Algorithm_algorithm.cpp.o ./Debug/main.cpp.o ./Debug/src_Maze_maze.cpp.o   
->>>>>>> 6602ec65d7fb505d3d753887d81da8a25250ff2d
