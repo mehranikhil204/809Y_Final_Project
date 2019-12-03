@@ -16,13 +16,10 @@ namespace fp
 class Algorithm
 {
     private:
-        /**
-        * @brief Variable to store Vector of pairs for storing over all summary
-        */
+    
+        //Variable to store Vector of pairs for storing over all summary
         std::vector<std::pair<std::pair<int, int>, char>> summary_;
-        /**
-        * @brief Variable to store Map object for pairs for storing parent
-        */
+        //Variable to store Map object for pairs for storing parent
         std::map<std::pair<std::pair<int, int>, char>, std::pair<std::pair<int, int>, char>> parent_;
         // Vector of pairs for implementing BFS
         std::vector<std::pair<std::pair<int, int>, char>> frontier_;

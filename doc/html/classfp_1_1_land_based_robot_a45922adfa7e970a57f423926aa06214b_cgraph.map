@@ -1,0 +1,8 @@
+<map id="fp::LandBasedRobot::LandBasedRobot" name="fp::LandBasedRobot::LandBasedRobot">
+<area shape="rect" id="node2" href="$classfp_1_1_land_based_robot.html#ad4a0e1fdac24ed964edef9f5196bd146" title="Get direction of robot. " alt="" coords="195,5,336,47"/>
+<area shape="rect" id="node3" href="$classfp_1_1_land_based_robot.html#acb5f575b66c4d0fd28ff85c7b49d79d7" title="Move robot further/forward. " alt="" coords="195,71,336,112"/>
+<area shape="rect" id="node4" href="$classfp_1_1_land_based_robot.html#ae02326643473f9af46f839743b880341" title="Move the robot left in the maze. " alt="" coords="195,136,336,177"/>
+<area shape="rect" id="node5" href="$classfp_1_1_land_based_robot.html#a7c9e5fccc618e2e0d301605e60510ff0" title="Move the robot right in the maze. " alt="" coords="195,201,336,243"/>
+<area shape="rect" id="node6" href="$classfp_1_1_land_based_robot.html#a425e2660baa76202f16be3570e8c7c5d" title="Accessor to get the x coordinate of the robot. " alt="" coords="195,267,336,308"/>
+<area shape="rect" id="node7" href="$classfp_1_1_land_based_robot.html#acdb8dfdccd076e351124bba8ef32fbfc" title="Accessor to get the y coordinate of the robot. " alt="" coords="195,332,336,373"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="fp::Algorithm::SolveBFS" name="fp::Algorithm::SolveBFS">
+<area shape="rect" id="node2" href="$classfp_1_1_maze.html#abb86459a60c654f01a9622a3f26347e9" title="A function to update maze. " alt="" coords="238,5,393,32"/>
+<area shape="rect" id="node3" href="$classfp_1_1_algorithm.html#a94ff0e3e0ffe539c7fa863003fc1e906" title="A function to check goal. " alt="" coords="231,56,400,83"/>
+<area shape="rect" id="node4" href="$classfp_1_1_algorithm.html#a7d4e295c63acd712bbbba040841d81fc" title="A function to summary. " alt="" coords="216,107,415,133"/>
+<area shape="rect" id="node5" href="$classfp_1_1_maze.html#af222b816eaabcdf68a82e8777efd95c3" title="A function get if there is a east wall. " alt="" coords="238,157,393,184"/>
+<area shape="rect" id="node6" href="$classfp_1_1_maze.html#a022f7f2dae8710856bea23a288ce7189" title="A function get if there is a west wall. " alt="" coords="237,208,394,235"/>
+<area shape="rect" id="node7" href="$classfp_1_1_maze.html#ac6c2c784a0bab5f1db434c0d31beaa4d" title="A function get if there is a north wall. " alt="" coords="236,259,395,285"/>
+<area shape="rect" id="node8" href="$classfp_1_1_algorithm.html#a60f5af10013b5c8260100e636d7505b2" title="A function to check Frontier. " alt="" coords="222,309,409,336"/>
+<area shape="rect" id="node9" href="$classfp_1_1_maze.html#a645aa768192d05ae1445d64fa91f46fb" title="A function get if there is a south wall. " alt="" coords="235,360,396,387"/>
+</map>

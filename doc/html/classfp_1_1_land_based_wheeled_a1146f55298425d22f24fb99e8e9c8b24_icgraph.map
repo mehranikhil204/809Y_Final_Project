@@ -1,0 +1,6 @@
+<map id="fp::LandBasedWheeled::GetDirection" name="fp::LandBasedWheeled::GetDirection">
+<area shape="rect" id="node2" href="$classfp_1_1_land_based_wheeled.html#add6c1d1e60b3b0aee633d18f6b9bb3ad" title="A function to move robot further. " alt="" coords="211,5,368,47"/>
+<area shape="rect" id="node3" href="$classfp_1_1_land_based_wheeled.html#aa4751775a4cb947145aafc1761f45666" title="Land Based Wheeled. " alt="" coords="416,93,573,135"/>
+<area shape="rect" id="node4" href="$classfp_1_1_land_based_wheeled.html#acd84ca4d46847d7302ebb5d342024e5a" title="A function to turn robot left. " alt="" coords="211,123,368,164"/>
+<area shape="rect" id="node5" href="$classfp_1_1_land_based_wheeled.html#a2de418c4d0f1452346e2a3ee5f8886cb" title="A function to turn robot right. " alt="" coords="211,188,368,229"/>
+</map>

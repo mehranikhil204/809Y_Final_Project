@@ -1,0 +1,7 @@
+<map id="fp::Algorithm::MoveRobot" name="fp::Algorithm::MoveRobot">
+<area shape="rect" id="node2" href="$classfp_1_1_maze.html#ac6c2c784a0bab5f1db434c0d31beaa4d" title="A function get if there is a north wall. " alt="" coords="225,5,384,32"/>
+<area shape="rect" id="node3" href="$classfp_1_1_maze.html#af222b816eaabcdf68a82e8777efd95c3" title="A function get if there is a east wall. " alt="" coords="227,56,382,83"/>
+<area shape="rect" id="node4" href="$classfp_1_1_maze.html#a022f7f2dae8710856bea23a288ce7189" title="A function get if there is a west wall. " alt="" coords="226,107,383,133"/>
+<area shape="rect" id="node5" href="$classfp_1_1_maze.html#a645aa768192d05ae1445d64fa91f46fb" title="A function get if there is a south wall. " alt="" coords="224,157,385,184"/>
+<area shape="rect" id="node6" href="$classfp_1_1_maze.html#abb86459a60c654f01a9622a3f26347e9" title="A function to update maze. " alt="" coords="227,208,382,235"/>
+</map>

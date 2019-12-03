@@ -1,5 +1,18 @@
+/**
+ * @class Algorithm
+ * @author Pranali Desai, Nikhil Mehra, Chayan Kumar Patodi, Zhengliang Liu, Justin Huemme, Kumar Sambhav
+ * @date 12/02/2019
+ * @file algorithm.cpp
+ * @brief Method Definitions
+ */
 #include "algorithm.h"
-
+/**
+* @brief A function to check goal
+* @author Group 6
+* @param x x location 
+* @param y y location
+* @return Result as True or False
+*/
 bool fp::Algorithm::CheckGoal(int x, int y) {
     if(x == 7 && y == 7)
         return true;
@@ -11,7 +24,13 @@ bool fp::Algorithm::CheckGoal(int x, int y) {
         return true;
     return false;
 }
-
+/**
+* @brief A function to check Frontier
+* @author Group 6
+* @param pair of x y 
+* @param pos of robot
+* @return Result as True or False
+*/
 bool fp::Algorithm::CheckFrontier(std::pair<std::pair<int, int>, char> pos) {
     for(auto i:frontier_) {
         if((i.first.first == pos.first.first) && (i.first.second == pos.first.second) && (i.second == pos.second))
@@ -19,7 +38,13 @@ bool fp::Algorithm::CheckFrontier(std::pair<std::pair<int, int>, char> pos) {
     }
     return false;
 }
-
+/**
+* @brief A function to summary
+* @author Group 6
+* @param pair of x y 
+* @param pos of robot
+* @return Result as True or False
+*/
 bool fp::Algorithm::CheckSummary(std::pair<std::pair<int, int>, char> pos) {
     for(auto i:summary_) {
         if((i.first.first == pos.first.first) && (i.first.second == pos.first.second) && (i.second == pos.second))
@@ -27,7 +52,12 @@ bool fp::Algorithm::CheckSummary(std::pair<std::pair<int, int>, char> pos) {
     }
     return false;
 }
-
+/**
+* @brief A function to solve BFS
+* @author Group 6
+* @param maze to run in 
+* @param robot
+*/
 bool fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze& maze) {
     
     fp::API::clearAllColor();
@@ -156,7 +186,13 @@ bool fp::Algorithm::SolveBFS(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze
     std::reverse(path_.begin(), path_.end());
     return true;
 }
-
+/**
+* @brief A function to move robot
+* @author Group 6
+* @param maze to run in 
+* @param robot
+* @return Result True or False
+*/
 bool fp::Algorithm::MoveRobot(std::shared_ptr<fp::LandBasedRobot> robot, fp::Maze& maze) {
     
     int prev_x, prev_y;
